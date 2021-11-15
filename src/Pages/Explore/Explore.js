@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import Navigation from '../Shared/Navigation/Navigation';
 import Car from './Car/Car';
 
@@ -21,7 +21,6 @@ const Explore = () => {
                     key={car._id}
                     car={car}
                 ></Car>)}
-
             </Row>
         </div>
     );

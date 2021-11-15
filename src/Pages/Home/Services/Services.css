@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap');
-.navBrand{
+.comp-title{
     font-family: 'Montagu Slab', serif;
-}
-.navbar{
-    background-color: black;
 }

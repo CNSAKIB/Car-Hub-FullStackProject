@@ -12,6 +12,7 @@ import AuthProvider from './context/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Explore from './Pages/Explore/Explore';
 import CarDetails from './Pages/Explore/CarDetails/CarDetails';
+import Footer from './Pages/Shared/Footer/Footer';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
               <Home></Home>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
 

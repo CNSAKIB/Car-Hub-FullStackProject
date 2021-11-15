@@ -18,7 +18,7 @@ const Navigation = () => {
                         height="60"
                         className="d-inline-block align-top"
                     />{' '}
-                    <span className="fw-bold fs-2 ms-3" >Car-Hub</span>
+                    <span className="fw-bold fs-2 ms-3 navBrand" >Car-Hub</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -26,8 +26,10 @@ const Navigation = () => {
                         <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
                         <Nav.Link as={NavLink} to="/explore">Explore</Nav.Link>
                         {user?.email && <Nav.Link as={NavLink} to="/dashboard">Dashboard</Nav.Link>}
-                        {user?.email && <p className="text-white">{user?.displayName}</p>}
-                        {user?.email ? <Button onClick={logout} variant="danger">Logout</Button> :
+                        {user?.email && <small className="mx-4 mt-2 text-white">Welcome,{user?.displayName}</small>}
+                        {user?.email ? <Button onClick={logout} variant="light">
+                            <i className="fas fa-sign-out-alt fs-6"></i>
+                        </Button> :
                             <Nav.Link as={NavLink} to="/login">Login</Nav.Link>}
                     </Nav>
                 </Navbar.Collapse>
