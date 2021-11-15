@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 0;
+    }
+  }
+.Header-container{
+    background-image: url("../../../images/banner.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.384));
+  height: 750px;
+  width: 100%;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: animatedBackground 10s linear infinite alternate;
+}
+.header-text{
+  font-family: 'Poppins', sans-serif;
+}
+.btn-regular {
+    border: none;
+    background-color: #FFAF7B;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color:lightcyan;
+    transition: 0.3s ease-in-out;
+}
+.btn-regular:hover{
+    color: black;
+    padding:7px 20px ;
+    
+}
