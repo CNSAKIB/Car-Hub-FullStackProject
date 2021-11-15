@@ -15,7 +15,7 @@ const AddNewCar = () => {
     }
     const handleCarSubmit = e => {
         console.log(carData);
-        fetch(`http://localhost:5000/addServices`, {
+        fetch(`https://limitless-retreat-11004.herokuapp.com/addServices`, {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(carData),

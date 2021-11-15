@@ -11,7 +11,7 @@ const CarDetails = () => {
     const [carDetails, setCarDetails] = useState();
     const history = useHistory();
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${carId}`)
+        fetch(`https://limitless-retreat-11004.herokuapp.com/cars/${carId}`)
             .then(res => res.json())
             .then(data => setCarDetails(data));
     }, [carId])
@@ -20,7 +20,7 @@ const CarDetails = () => {
     const onSubmit = data => {
         data.status = "Pending";
         console.log(data)
-        fetch(`http://localhost:5000/addBooking`, {
+        fetch(`https://limitless-retreat-11004.herokuapp.com/addBooking`, {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(data),

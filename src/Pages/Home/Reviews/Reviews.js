@@ -9,7 +9,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     AOS.init();
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://limitless-retreat-11004.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
 

@@ -7,7 +7,7 @@ const MyOrders = () => {
     const email = user.email;
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${email}`)
+        fetch(`https://limitless-retreat-11004.herokuapp.com/orders/${email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders, email]);
@@ -16,7 +16,7 @@ const MyOrders = () => {
         // console.log(id)
         const proceed = window.confirm("Are you sure, you want to cancel?");
         if (proceed) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://limitless-retreat-11004.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" }
 
