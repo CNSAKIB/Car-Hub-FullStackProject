@@ -21,7 +21,7 @@ const Services = () => {
                     car={car}
                 ></Car>)}
             </Row>
-            <Link to="/explore"><Button className="my-4 btn-regular" variant="danger">Explore More <i class="fas fa-arrow-right"></i></Button></Link>
+            <Link to="/explore"><Button className="my-4 bttn-regular" variant="danger">Explore More <i class="fas fa-arrow-right"></i></Button></Link>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.btn-regular{
+.bttn-regular{
   border-radius: 50px;
 }
 @keyframes animatedBackground {
@@ -24,7 +24,7 @@
 .header-text{
   font-family: 'Poppins', sans-serif;
 }
-.btn-regular {
+.bttn-regular {
     border: none;
     background-color: #FFAF7B;
     padding: 5px 15px;
@@ -32,7 +32,7 @@
     color:lightcyan;
     transition: 0.3s ease-in-out;
 }
-.btn-regular:hover{
+.bttn-regular:hover{
     color: black;
     padding:7px 20px ;
     

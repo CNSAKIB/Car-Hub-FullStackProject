@@ -19,7 +19,7 @@ const Banner = () => {
                                 <span className="text-danger"> From Here</span>
                             </h1>
                             <p>We provide you the best cars</p>
-                            <Link to='/explore'><Button className="px-4 py-2 btn-regular" variant="danger">Explore  <i class="fas fa-arrow-right"></i></Button></Link>
+                            <Link to='/explore'><Button className="px-4 py-2 bttn-regular" variant="danger">Explore  <i class="fas fa-arrow-right"></i></Button></Link>
                         </Col>
                     </Row>
                 </Container>
