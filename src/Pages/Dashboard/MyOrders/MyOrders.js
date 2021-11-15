@@ -10,7 +10,7 @@ const MyOrders = () => {
         fetch(`http://localhost:5000/orders/${email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [orders]);
+    }, [orders, email]);
     // Cancel Booking
     const handleDelete = (id) => {
         // console.log(id)

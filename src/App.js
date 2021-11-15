@@ -13,6 +13,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Explore from './Pages/Explore/Explore';
 import CarDetails from './Pages/Explore/CarDetails/CarDetails';
 import Footer from './Pages/Shared/Footer/Footer';
+import NotFound from './Pages/NotFound/NotFound';
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
             </PrivateRoute>
             <Route exact path="/">
               <Home></Home>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>

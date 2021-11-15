@@ -4,7 +4,8 @@ import {
     Switch,
     Route,
     Link,
-    useRouteMatch
+    useRouteMatch,
+    NavLink
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
@@ -31,11 +32,11 @@ const Dashboard = () => {
                     </Button>
                     <Offcanvas show={show} onHide={handleClose}>
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title>Car-Hub</Offcanvas.Title>
+                            <Offcanvas.Title className="comp-title fs-1">Car-Hub</Offcanvas.Title>
                         </Offcanvas.Header>
                         <hr />
                         <Offcanvas.Body className="text-center">
-                            <Link to="/home"><i className="fas fa-home"></i> Home</Link> <br />
+                            <Link as={NavLink} to="/home"><i className="fas fa-home"></i> <span>Home</span></Link> <br />
                             <Link to={`${url}/profile`} ><i className="fas fa-shopping-cart"></i> My Profile</Link> <br />
                             <Link to={`${url}/myOrders`} ><i className="fas fa-shopping-cart"></i> My Orders</Link> <br />
                             <Link to={`${url}/payment`} ><i className="fas fa-money-check-alt"></i> Payment</Link> <br />

@@ -70,7 +70,7 @@ const AllOrders = () => {
                             <td >{order.contact}  </td>
                             <td >{order.address}  </td>
                             <td >{order.status}  </td>
-                            <td > <Button onClick={() => handleApprove(order._id)} variant="success">Shipped</Button>  </td>
+                            <td > <Button onClick={() => handleApprove(order._id)} variant="success">Ship</Button>  </td>
                             <td > <Button onClick={() => handleDelete(order._id)} variant="danger">Cancel</Button>  </td>
                         </tr>
                     </tbody>

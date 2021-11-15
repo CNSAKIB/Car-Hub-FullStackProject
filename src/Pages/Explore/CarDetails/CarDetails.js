@@ -39,10 +39,10 @@ const CarDetails = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <h1>This is Car Details</h1>
+            <h1 className="comp-title fs-1" ><u>Car Details</u></h1>
             <div>
                 <img className="w-50 m-4" src={carDetails?.img} alt="" />
-                <h1>{carDetails?.name}</h1>
+                <h1 className="comp-title fs-1">{carDetails?.name}</h1>
                 <p className="w-50 mx-auto py-1">Price: &#2547;{carDetails?.price} </p>
                 <p className="w-50 mx-auto pb-1">Transmition:{carDetails?.transmition} </p>
                 <p className="w-50 mx-auto pb-1">Fuel: {carDetails?.fuel} </p>
