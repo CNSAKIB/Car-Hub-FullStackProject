@@ -23,6 +23,7 @@ const Review = () => {
         review.rating = rate;
         review.email = user.email;
         review.name = user.displayName;
+        review.img = user.photoURL;
         console.log(review);
         fetch('https://limitless-retreat-11004.herokuapp.com/reviews', {
             method: 'POST',

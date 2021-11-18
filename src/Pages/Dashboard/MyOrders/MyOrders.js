@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
@@ -14,21 +15,37 @@ const MyOrders = () => {
     // Cancel Booking
     const handleDelete = (id) => {
         // console.log(id)
-        const proceed = window.confirm("Are you sure, you want to cancel?");
-        if (proceed) {
-            fetch(`https://limitless-retreat-11004.herokuapp.com/deleteOrder/${id}`, {
-                method: "DELETE",
-                headers: { "content-type": "application/json" }
+        // const proceed = window.confirm("Are you sure, you want to cancel?");
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://limitless-retreat-11004.herokuapp.com/deleteOrder/${id}`, {
+                    method: "DELETE",
+                    headers: { "content-type": "application/json" }
 
-            })
-                .then((res) => res.json())
-                .then((result) => {
-                    // console.log(result);
-                    if (result.deletedCount) {
-                        alert("Successfully Cancelled Order");
-                    }
-                });
-        }
+                })
+                    .then((res) => res.json())
+                    .then((result) => {
+                        // console.log(result);
+                        if (result.deletedCount) {
+                            // alert("Successfully Cancelled Order");
+                            Swal.fire(
+                                'Cancelled!',
+                                'Your order cancelled succefully.',
+                                'success'
+                            )
+                        }
+                    });
+            }
+        })
+
     }
     return (
         <div>

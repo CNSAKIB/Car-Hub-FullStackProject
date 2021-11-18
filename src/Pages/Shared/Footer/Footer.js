@@ -24,7 +24,7 @@ const Footer = () => {
                         <h4>Office:</h4>
                         <p>27/A, Gulshan,Dhaka,Bangladesh</p> <br />
                         <p>For Booking: 92173298</p>
-                        <p>Email:holiday@planner.com</p>
+                        <p>Email:car@hub.com</p>
                     </Col>
                     <p className="text-center mt-5 pt-5">
                         &copy; All rights reserved by: Chowdhury Nazmuz Sakib

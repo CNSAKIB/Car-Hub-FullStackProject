@@ -13,17 +13,17 @@ const Car = (props) => {
             <Card data-aos="zoom-in-down" className="single-card">
                 <Card.Img className="img-container" variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title className="fw-bold">{name}</Card.Title>
+                    <Card.Title className="fw-bold fs-3">{name}</Card.Title>
                     <Card.Text>
-                        <span className="p-4"> <span className="text-primary">Price:</span> &#2547; {price} </span>
-                        <span className="text-primary">Year:</span>{year}
+                        <span className="p-4 fw-bold"> <span className="text-secondary m-2">Price:</span> &#2547; {price} </span> <br />
+                        <span className="fw-bold"><span className="text-secondary">Year:</span> {year}</span>
                         <br />
-                        <span className="p-4">  <span className="text-primary">Fuel:</span>{fuel}</span>
-                        <span className="text-primary">Milage:</span>{milage}
+                        <span className="p-4 fw-bold">  <span className="text-secondary m-2">Fuel:</span>{fuel}</span>
+                        <br /><span className="fw-bold"> <span className="text-secondary">Milage:</span> {milage}</span>
                         <br />
-                        <span className="mt-4">  <span className="text-primary">Transmition:</span>{transmition}</span>
+                        <span className="mt-4 fw-bold">  <span className="text-secondary m-2">Transmition:</span>{transmition}</span>
                         <br />
-                        <Link to={`/details/${_id}`} > <Button className="mt-3" variant="outline-primary">Book Now</Button></Link>
+                        <Link to={`/details/${_id}`} > <Button className="mt-3 book-btn" variant="danger">Book Now <i className="fas fa-arrow-right"></i></Button></Link>
                     </Card.Text>
                 </Card.Body>
             </Card>

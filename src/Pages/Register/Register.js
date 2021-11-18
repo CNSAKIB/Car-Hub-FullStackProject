@@ -4,6 +4,7 @@ import Navigation from '../Shared/Navigation/Navigation';
 import login from '../../images/login.jpg'
 import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 const Register = () => {
     const [loginData, setLoginData] = useState({});
     const { user, registerUser, isLoading, authError } = useAuth();
@@ -19,7 +20,12 @@ const Register = () => {
     const handleRegisterSubmit = e => {
         e.preventDefault();
         if (loginData.password !== loginData.password2) {
-            alert("Oops!Your Password Didn't Matched");
+            // alert("Oops!Your Password Didn't Matched");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password did not matched!'
+            })
         }
         else {
             registerUser(loginData.email, loginData.password, loginData.name, history);

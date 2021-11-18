@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, updateProfile, sendPasswordResetEmail, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import initializeFirebase from "../Pages/Login/Firebase/firebase.init";
+import Swal from "sweetalert2";
 
 initializeFirebase();
 const useFirebase = () => {
@@ -39,7 +40,11 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
+                Swal.fire(
+                    'Logged in Succefully!',
+                    'You are now logged in!',
+                    'success'
+                )
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 setAuthError('');
@@ -57,6 +62,11 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
+                Swal.fire(
+                    'Logged in Succefully!',
+                    'You are now logged in!',
+                    'success'
+                )
                 saveUser(user.email, user.displayName, 'PUT');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
@@ -119,7 +129,20 @@ const useFirebase = () => {
             },
             body: JSON.stringify(user)
         })
-            .then()
+            .then((res) => res.json())
+            .then((result) => {
+                // console.log(result.insertedId);
+                if (result.insertedId) {
+                    Swal.fire(
+                        'Registered Succefully!',
+                        'Your registration has been done!',
+                        'success'
+                    )
+                    // alert("Booked Successfully!");
+
+                }
+
+            });
     }
     return {
         user,

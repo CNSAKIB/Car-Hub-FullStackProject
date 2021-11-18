@@ -7,6 +7,7 @@ import {
     useRouteMatch,
     NavLink
 } from "react-router-dom";
+import './Dashboard.css'
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
 import AddNewCar from './AddNewCar/AddNewCar';
@@ -16,6 +17,7 @@ import MakeAdmin from './MakeAdmin/MakeAdmin';
 import MyOrders from './MyOrders/MyOrders';
 import Payment from './Payment/Payment';
 import Review from './Review/Review';
+import logo from '../../images/logo.png'
 
 const Dashboard = () => {
     const [show, setShow] = useState(false);
@@ -32,20 +34,39 @@ const Dashboard = () => {
                     </Button>
                     <Offcanvas show={show} onHide={handleClose}>
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title className="comp-title fs-1">Car-Hub</Offcanvas.Title>
+                            <Offcanvas.Title className="comp-title fs-1"> <img className='logo-img' src={logo} alt="" /><span className='title-style'>Car</span>-Hub </Offcanvas.Title>
                         </Offcanvas.Header>
                         <hr />
                         <Offcanvas.Body className="text-center">
-                            <Link as={NavLink} to="/home"><i className="fas fa-home"></i> <span>Home</span></Link> <br />
-                            <Link to={`${url}/profile`} ><i className="fas fa-shopping-cart"></i> My Profile</Link> <br />
-                            <Link to={`${url}/myOrders`} ><i className="fas fa-shopping-cart"></i> My Orders</Link> <br />
-                            <Link to={`${url}/payment`} ><i className="fas fa-money-check-alt"></i> Payment</Link> <br />
-                            <Link to={`${url}/review`} ><i className="fas fa-medal"></i> Review</Link> <br />
+                            <Link as={NavLink}
+                                className="link-item" to="/home">
+                                <i className="fas fa-home"></i>
+                                <span>Home</span>
+                            </Link> <br />
+                            <Link as={NavLink}
+                                className="link-item" to={`${url}/profile`} >
+                                <i className="fas fa-shopping-cart"></i>
+                                My Profile</Link> <br />
+                            <Link as={NavLink}
+                                className="link-item" to={`${url}/myOrders`} ><i className="fas fa-shopping-cart"></i>
+                                My Orders</Link> <br />
+                            <Link as={NavLink}
+                                className="link-item" to={`${url}/payment`} >
+                                <i className="fas fa-money-check-alt"></i> Payment</Link> <br />
+                            <Link as={NavLink}
+                                className="link-item" to={`${url}/review`} >
+                                <i className="fas fa-medal"></i> Review</Link> <br />
                             {admin && <div>
                                 <hr />
-                                <Link to={`${url}/makeAdmin`} ><i className="fas fa-user-shield"></i>  Make Admin</Link> <br />
-                                <Link to={`${url}/allOrders`} ><i className="fas fa-cart-arrow-down"></i> All Orders</Link> <br />
-                                <Link to={`${url}/addCar`} ><i className="fas fa-plus"></i> Add New Car</Link> <br />
+                                <Link as={NavLink}
+                                    className="link-item" to={`${url}/makeAdmin`} >
+                                    <i className="fas fa-user-shield"></i>  Make Admin</Link> <br />
+                                <Link as={NavLink}
+                                    className="link-item" to={`${url}/allOrders`} >
+                                    <i className="fas fa-cart-arrow-down"></i> All Orders</Link> <br />
+                                <Link as={NavLink}
+                                    className="link-item" to={`${url}/addCar`} >
+                                    <i className="fas fa-plus"></i> Add New Car</Link> <br />
                             </div>}
 
                             <hr />

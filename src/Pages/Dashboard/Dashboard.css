@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+.logo-img{
+    width: 100px;
+    height: 100px;
+}
+.title-style{
+    font-family: 'Road Rage', cursive;
+    color: tomato;
+    font-size: 40px;
+}
 .link-item{
+font-family: 'Road Rage', cursive;
 text-decoration: none;
+color:tomato;
+font-size: 26px;
+}
+.link-item i {
+    margin: 7px;
+}
+.link-item:hover{
+    color: black;
 }
