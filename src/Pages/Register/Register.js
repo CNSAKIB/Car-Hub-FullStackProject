@@ -39,7 +39,7 @@ const Register = () => {
 
                 <Row>
                     <Col xs={12} sm={12} md={8}>
-                        <h1 className="mb-3" >Register Now!</h1>
+                        <h1 className="mb-3 comp-title" >Register Now!</h1>
                         {!isLoading && <form onSubmit={handleRegisterSubmit} >
                             <FloatingLabel
                                 controlId="floatingInput"
@@ -85,7 +85,7 @@ const Register = () => {
                                     onBlur={handleOnBlur}
                                     placeholder="ReType Password" />
                             </FloatingLabel>
-                            <Button type="submit" variant="primary">Register</Button> <br />
+                            <Button type="submit" variant="primary">Register <i className="fas fa-sign-in-alt"></i></Button> <br />
                         </form>} <br />
                         {isLoading && <Spinner animation="grow" />}
                         {user?.email && <Alert variant='success'>
@@ -96,7 +96,7 @@ const Register = () => {
                         </Alert>}
                         <hr />
                         <br />
-                        <Link to="/login" className="my-4">Already have an account?</Link>
+                        <Link to="/login" style={{ textDecoration: 'none' }} className="my-4 fw-bold">Already have an account?</Link>
                     </Col>
                     <Col xs={12} sm={12} md={4}>
                         <img className="w-100 mx-auto" src={login} alt="" />

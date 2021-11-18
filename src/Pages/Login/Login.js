@@ -36,7 +36,7 @@ const Login = () => {
 
                 <Row>
                     <Col xs={12} sm={12} md={8}>
-                        <h1 className="mb-3" >Login</h1>
+                        <h1 className="mb-3 comp-title" >Login</h1>
                         {!isLoading && <form onSubmit={handleLoginSubmit}>
                             <FloatingLabel
                                 controlId="floatingInput"
@@ -60,7 +60,7 @@ const Login = () => {
                                     onBlur={handleOnBlur}
                                     placeholder="Password" />
                             </FloatingLabel>
-                            <Button onClick={handleLoginSubmit} className="mx-3" type="submit" variant="primary">Login</Button> <br />
+                            <Button onClick={handleLoginSubmit} className="mx-3" type="submit" variant="primary">Login <i className="fas fa-sign-in-alt"></i></Button> <br />
                             <Button onClick={handleResetPassword} className="mx-3 mt-3" variant="primary">Forget Password?</Button>
                         </form>} <br />
                         {isLoading && <Spinner animation="grow" />}
@@ -73,8 +73,8 @@ const Login = () => {
                         <br />
                         <hr />
                         <br />
-                        <Button onClick={handleGoogleSignIn} className="mx-3" variant="light"><i class="fab fa-google"></i>  Sign in with Google</Button>
-                        <Link to="/register" className="my-4">New User?Create an Account</Link>
+                        <Button onClick={handleGoogleSignIn} className="mx-3" variant="danger"><i className="fab fa-google"></i>  Sign in with Google</Button>
+                        <Link to="/register" style={{ textDecoration: 'none' }} className="my-4 fw-bold">New User? Create an Account</Link>
                     </Col>
                     <Col xs={12} sm={12} md={4}>
                         <img className="w-100 mx-auto" src={login} alt="" />
